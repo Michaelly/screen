@@ -15,7 +15,7 @@
         loadWeather();
 
         setInterval( function() {
-            refreshContent();
+            loadWeather();
         }, 900000);
 
     });
