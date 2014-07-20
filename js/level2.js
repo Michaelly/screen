@@ -18,6 +18,12 @@
             loadWeather();
         }, 900000);
 
+        l2status();
+
+        setInterval( function() {
+            l2status();
+        }, 60000);
+
     });
 
 
@@ -27,7 +33,7 @@
 function refreshTime() {
 
     $('.time').text( moment().format('HH:mm') );
-    $('.date').text( moment().format('MMMM Do YYYY') );
+    $('.date').text( moment().format('dddd, Do \of MMMM') );
 
 }
 
@@ -182,4 +188,28 @@ function OWMIcon( imageCode ) {
     '50n': [ "fog moon" ]
   };
   return b[ imageCode ]
+}
+
+function l2status() {
+
+    $('.status').removeClass('open').removeClass('closed');
+
+    var request = $.ajax({
+        type: 'get',
+        url: 'https://www.hackerspace.lu/od/',
+        complete: function( response ) {
+
+            var status =  JSON.parse( response.responseText );
+
+            if ( status.open ) {
+                $('.status').addClass('open').text('Open');
+            } else {
+                $('.status').addClass('closed').text('Closed');
+            }
+
+        }
+    });
+
+    console.log( moment().format('YYYY.MM.DD - HH:mm:ss') + ' updated Level2 status' );
+
 }

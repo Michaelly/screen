@@ -65,13 +65,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .weather {
-    margin-top: 25px;
+    margin-top: 35px;
     opacity: 0.8;
 }
 
 .logo {
     text-align: center;
     font-size: 8em;
-    margin-top: 25px;
+    margin-top: 35px;
     opacity: 0.8;
+}
+
+.open {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.closed {
+    background: #d9534f;
+    color: #fff;
+}
+
+.status {
+    text-align: center;
+    font-size: 7em;
+    padding: 0;
 }
