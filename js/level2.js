@@ -192,14 +192,14 @@ function OWMIcon( imageCode ) {
 
 function l2status() {
 
-    $('.status').removeClass('open').removeClass('closed');
-
     var request = $.ajax({
         type: 'get',
         url: 'https://www.hackerspace.lu/od/',
         complete: function( response ) {
 
             var status =  JSON.parse( response.responseText );
+
+            $('.status').removeClass('open').removeClass('closed');
 
             if ( status.open ) {
                 $('.status').addClass('open').text('Open');
