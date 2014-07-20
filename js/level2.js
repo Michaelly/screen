@@ -26,7 +26,7 @@
 
 function refreshTime() {
 
-    $('.time').text( moment().format('h:mm') );
+    $('.time').text( moment().format('HH:mm') );
     $('.date').text( moment().format('MMMM Do YYYY') );
 
 }
@@ -76,11 +76,11 @@ function refreshContent() {
 
             timeLeftMessage = 'departure in ' + timeDifference + 'minutes';
 
-            if ( timeDifference <= 5 ) {
+            if ( timeDifference <= 5 && timeDifference > -1 ) {
 
                 labelColor = "danger";
 
-            } else if ( timeDifference <= 10) {
+            } else if ( timeDifference <= 10 && timeDifference > -1 ) {
 
                 labelColor = "warning";
 
