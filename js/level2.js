@@ -74,6 +74,8 @@ function refreshContent() {
 
             timeDifference = busTime.diff( now, 'minutes' );
 
+            timeLeftMessage = 'departure in ' + timeDifference + 'minutes';
+
             if ( timeDifference <= 5 ) {
 
                 labelColor = "danger";
@@ -85,10 +87,11 @@ function refreshContent() {
             } else {
 
                 labelColor = "info";
+                timeLeftMessage = '';
 
             }
 
-            content += '<h1>' + time + ' <span class="label label-' + labelColor + ' label-lg">' + name + '</span></h1>' + destination;
+            content += '<h1>' + time + ' <span class="label label-' + labelColor + ' label-lg">' + name + '</span> ' + destination + '</h1>' + timeLeftMessage;
 
 
         });
