@@ -77,14 +77,11 @@ function refreshContent() {
 
             var timeDifference;
 
-            var hours   = time.substring(0, 2);
-            var minutes = time.substring(3, 5);
+            var busTime = moment()
+                .set('hour', time.substring(0, 2) )
+                .set('minute', time.substring(3, 5) );
 
-            var busTime = moment().set('hour', hours).set('minute', minutes);
-
-            var now = moment();
-
-            timeDifference = busTime.diff( now, 'minutes' );
+            timeDifference = busTime.diff( moment(), 'minutes' );
 
             timeLeftMessage = 'departure in ' + timeDifference + ' minutes';
 
