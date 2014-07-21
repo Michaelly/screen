@@ -49,7 +49,7 @@ function refreshContent() {
 
     var request = $.ajax({
       type: 'get',
-      url: 'http://getcontents.herokuapp.com/?url=http%3A%2F%2Ftravelplanner.mobiliteit.lu%2Fhafas%2Fcdt%2Fstboard.exe%2Ffn%3FL%3Dvs_stb%26%26input%3D200404028!%26boardType%3Ddep%26time%3D' + moment().format('HH') + '%3A' + moment().format('mm') + '%26selectDate%3Dtoday%26productsFilter%3D1111111111%26additionalTime%3D0%26start%3Dyes%26requestType%3D0%26disableEquivs%3Dyes%26ignoreMasts%3D1%26outputMode%3Dundefined%26maxJourneys%3D10',
+      url: 'http://getcontents.herokuapp.com/?url=http%3A%2F%2Ftravelplanner.mobiliteit.lu%2Fhafas%2Fcdt%2Fstboard.exe%2Ffn%3FL%3Dvs_stb%26input%3D200404028%26boardType%3Ddep%26time%3D' + moment().format('HH') + '%3A' + moment().format('mm') + '%26selectDate%3Dtoday%26start%3Dyes%26requestType%3D0%26maxJourneys%3D10',
       complete: function( response ) {
 
         resp = response.responseText.slice(14);
