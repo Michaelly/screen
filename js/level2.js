@@ -86,7 +86,7 @@ function refreshContent() {
 
             timeDifference = busTime.diff( now, 'minutes' );
 
-            timeLeftMessage = 'departure in ' + timeDifference + 'minutes';
+            timeLeftMessage = 'departure in ' + timeDifference + ' minutes';
 
             if ( timeDifference <= 5 && timeDifference > -1 ) {
 
