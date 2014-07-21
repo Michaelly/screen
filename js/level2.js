@@ -103,6 +103,10 @@ function refreshContent() {
 
             }
 
+            if ( name.indexOf("Bus") != -1 ) {
+                name = name.slice( name.indexOf("Bus ") + 4 );
+            }
+
             content += '<h1>' + time + ' <span class="label label-' + labelColor + ' label-lg">' + name + '</span> ' + destination + '</h1>' + timeLeftMessage;
 
 
@@ -232,8 +236,6 @@ function l2events() {
             var output = '';
 
             $.each( events.items , function( nr, l2event ) {
-
-                console.log( l2event );
 
                 output += '<div class="panel">'
                 + '<h1>' + l2event.label + ' <small>'
