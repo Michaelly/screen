@@ -291,7 +291,7 @@ function tflNews() {
 
             });
 
-            //$('.tfl').html('').append( output );
+            $('.tfl').html( output );
 
         }
     });
