@@ -273,7 +273,7 @@ function tflNews() {
             .find("P")
             .each( function() {
 
-                 var platform = $(this).attr("N") );
+                 var platform = $(this).attr("N");
 
                  $(this).find("T")
                  .each( function() {
