@@ -262,7 +262,7 @@ function tflNews() {
 
     var request = $.ajax({
         type: 'get',
-        url: 'http://cloud.tfl.gov.uk/TrackerNet/PredictionDetailed/D/GUN',
+        url: 'http://getcontents.herokuapp.com/?url=http%3A%2F%2Fcloud.tfl.gov.uk%2FTrackerNet%2FPredictionDetailed%2FD%2FGUN',
         complete: function( response ) {
 
             var tfl = response.responseText;
