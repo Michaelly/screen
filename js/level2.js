@@ -280,7 +280,7 @@ function tflNews() {
 
             });
 
-            $('.cfl').html('').append( output );
+            $('.tfl').html('').append( output );
 
         }
     });
