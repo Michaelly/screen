@@ -273,7 +273,12 @@ function tflNews() {
             .find("P")
             .each( function() {
 
-                 console.log( $(this).find("T").attr("Location") );
+                 $(this).find("T")
+                 .each( function() {
+                     
+                     $(this).attr("Location");
+                     
+                });
 
                 /*output += '<div class="panel">'
                 + '<h1>' + $(this).find("T").text() + '</h1>'
