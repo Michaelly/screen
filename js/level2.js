@@ -278,14 +278,16 @@ function tflNews() {
                  $(this).find("T")
                  .each( function() {
                      
-                     console.log( "Platform: " + platform + " Heading to: " + $(this).attr("Location") );
+                     var timeTo = $(this).attr("TimeTo");
+                     var destination = $(this).attr("Destination");
+                     var location = $(this).attr("Location");
+                     
+                     output += '<div class="panel">'
+                     + '<h1>' + destination + '<span class="label label-info">' + timeTo + '</span></h1>'
+                     + location
+                     + '</div>';
                      
                 });
-
-                /*output += '<div class="panel">'
-                + '<h1>' + $(this).find("T").text() + '</h1>'
-                + $(this).find("description").text()
-                + '</div>';*/
 
             });
 
