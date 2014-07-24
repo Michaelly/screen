@@ -283,7 +283,13 @@ function tflNews() {
                      var location = $(this).attr("Location");
                      
                      output += '<div class="panel">'
-                     + '<h1>' + destination + '<span class="label label-info">' + timeTo + '</span></h1>'
+                     + '<h1>' + destination;
+                     
+                     if ( timeTo != "-" ) {
+                        output += ' <span class="label label-info">' + timeTo + '</span>'; 
+                     }
+                     
+                     output += '</h1>'
                      + location
                      + '</div>';
                      
