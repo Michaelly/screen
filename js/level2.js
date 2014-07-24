@@ -123,8 +123,8 @@ function refreshContent() {
 
 function loadWeather() {
 
-    var city = 'Bonnevoie';
-    var country = 'lu';
+    var city = 'London';
+    var country = 'uk';
     var appid = '64a2215ad2f5f944abd334578763726e';
 
     var request = $.ajax({
