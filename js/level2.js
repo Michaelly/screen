@@ -29,6 +29,12 @@
         setInterval( function() {
             l2events();
         }, 3600000);
+        
+        tflNews();
+        
+        setInterval( function() {
+            tflNews();
+        }, 60000);
 
     });
 
@@ -249,5 +255,36 @@ function l2events() {
     });
 
     console.log( moment().format('YYYY.MM.DD - HH:mm:ss') + ' updated Level2 events' );
+
+}
+
+function tflNews() {
+
+    var request = $.ajax({
+        type: 'get',
+        url: 'http://getcontents.herokuapp.com/?url=http%3A%2F%2Fmobile.cfl.lu%2Fbin%2Fhelp.exe%2Fenl%3Ftpl%3Drss_feed_global',
+        complete: function( response ) {
+
+            var cfl = response.responseText;
+
+            var output = '';
+
+            $( $.parseXML( cfl ) )
+            .find("item")
+            .each( function() {
+
+                output += '<div class="panel">'
+                + '<h1>' + $(this).find("title").text() + '</h1>'
+                + $(this).find("description").text()
+                + '</div>';
+
+            });
+
+            $('.cfl').html('').append( output );
+
+        }
+    });
+
+    console.log( moment().format('YYYY.MM.DD - HH:mm:ss') + ' updated tfl News' );
 
 }
