@@ -276,7 +276,7 @@ function tflNews() {
                  $(this).find("T")
                  .each( function() {
                      
-                     $(this).attr("Location");
+                     console.log( $(this).attr("Location") );
                      
                 });
 
