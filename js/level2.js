@@ -262,25 +262,27 @@ function tflNews() {
 
     var request = $.ajax({
         type: 'get',
-        url: 'http://getcontents.herokuapp.com/?url=http%3A%2F%2Fmobile.cfl.lu%2Fbin%2Fhelp.exe%2Fenl%3Ftpl%3Drss_feed_global',
+        url: 'http://cloud.tfl.gov.uk/TrackerNet/PredictionDetailed/D/GUN',
         complete: function( response ) {
 
-            var cfl = response.responseText;
+            var tfl = response.responseText;
 
             var output = '';
 
-            $( $.parseXML( cfl ) )
-            .find("item")
+            $( $.parseXML( tfl ) )
+            .find("P")
             .each( function() {
 
-                output += '<div class="panel">'
-                + '<h1>' + $(this).find("title").text() + '</h1>'
+                 console.log( $(this).find("T") );
+
+                /*output += '<div class="panel">'
+                + '<h1>' + $(this).find("T").text() + '</h1>'
                 + $(this).find("description").text()
-                + '</div>';
+                + '</div>';*/
 
             });
 
-            $('.tfl').html('').append( output );
+            //$('.tfl').html('').append( output );
 
         }
     });
